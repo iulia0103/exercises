@@ -1,0 +1,5 @@
+<h1>Jewelry Types</h1>
+
+<% @jewelries.each do |jewelry| %>
+  <p><%= link_to jewelry.name, jewelry_path(jewelry) %><p>
+<% end %>

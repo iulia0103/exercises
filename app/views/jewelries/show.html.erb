@@ -1,0 +1,8 @@
+<h1><%= @jewelry.name %></h1>
+
+<% items = @jewelry.items %>
+<% items.each do |item| %>
+  <p><%= @jewelry.code %>.<%= item.code %> * <%= link_to item.name, jewelry_item_path(@jewelry, item.id) %> * <%= item.price %> EUR</p>
+<% end %>
+<br>
+<%= link_to ["Back"], jewelries_path %>
