@@ -4,5 +4,9 @@
 <% items.each do |item| %>
   <p><%= @jewelry.code %>.<%= item.code %> * <%= link_to item.name, jewelry_item_path(@jewelry, item.id) %> * <%= item.price %> EUR</p>
 <% end %>
+
 <br>
-<%= link_to ["Back"], jewelries_path %>
+<%= link_to "[Add Item]", new_jewelry_item_path(@jewelry) %>
+
+<br><br>
+<%= link_to "[Back]", jewelries_path %>
