@@ -1,9 +1,11 @@
-<h1><%= @item.name %></h1>
-<p>Code: <%= @jewelry.code %>.<%= @item.code %></p>
-<p>Price: <%= @item.price %> EUR</p>
+<section class="container">
+  <h1><%= @item.name %></h1>
+  <p>Code: <%= @jewelry.code %>.<%= @item.code %></p>
+  <p>Price: <%= @item.price %> EUR</p>
 
-<br>
-<%= link_to "[Delete]", jewelry_item_path( @item.jewelry_id, @item.id ), method: :delete, data: { confirm: "Are you sure?" } %>
+  <br>
+  <%= link_to "[Delete]", jewelry_item_path( @item.jewelry_id, @item.id ), method: :delete, data: { confirm: "Are you sure?" } %>
 
-<br><br>
-<%= link_to "[Back]", jewelry_path(@jewelry) %>
+  <br><br>
+  <%= link_to "[Back]", jewelry_path(@jewelry) %>
+</section>
