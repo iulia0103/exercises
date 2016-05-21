@@ -1,7 +1,14 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.order(jewelry_id: :asc)
+
+    if params[:search]
+      @items = Item.search(params[:search]).order(jewelry_id: :asc)
+    else
+      @items = Item.order(jewelry_id: :asc)
+    end
   end
+
 
   def show
     @item = Item.find(params[:id])

@@ -1,6 +1,13 @@
 <section class="container">
   <h1>All Items</h1>
   <br>
+
+  <%= form_tag("/jewelries/:jewelry_id/items", :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search jewelries" %>
+    <%= submit_tag "Search" %>
+  <% end %>
+
+  <br>
   <% @items.each do |item| %>
     <p><%= item.jewelry_id %>.<%= item.code %> * <%= link_to item.name, jewelry_item_path(item.jewelry_id, item.id) %> * <%= item.price %> EUR</p>
   <% end %>
